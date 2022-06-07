@@ -1,0 +1,15 @@
+D:\Github\ColorPicker\ColorPicker\bin\Debug\ColorPicker.exe.config
+D:\Github\ColorPicker\ColorPicker\bin\Debug\ColorPicker.exe
+D:\Github\ColorPicker\ColorPicker\bin\Debug\ColorPicker.pdb
+D:\Github\ColorPicker\ColorPicker\bin\Debug\MetroFramework.Design.dll
+D:\Github\ColorPicker\ColorPicker\bin\Debug\MetroFramework.dll
+D:\Github\ColorPicker\ColorPicker\bin\Debug\MetroFramework.Fonts.dll
+D:\Github\ColorPicker\ColorPicker\obj\Debug\ColorPicker.csproj.AssemblyReference.cache
+D:\Github\ColorPicker\ColorPicker\obj\Debug\ColorPicker.csproj.SuggestedBindingRedirects.cache
+D:\Github\ColorPicker\ColorPicker\obj\Debug\ColorPicker.Properties.Resources.resources
+D:\Github\ColorPicker\ColorPicker\obj\Debug\ColorPicker.csproj.GenerateResource.cache
+D:\Github\ColorPicker\ColorPicker\obj\Debug\ColorPicker.csproj.CoreCompileInputs.cache
+D:\Github\ColorPicker\ColorPicker\obj\Debug\ColorPicker.csproj.CopyComplete
+D:\Github\ColorPicker\ColorPicker\obj\Debug\ColorPicker.exe
+D:\Github\ColorPicker\ColorPicker\obj\Debug\ColorPicker.pdb
+D:\Github\ColorPicker\ColorPicker\obj\Debug\ColorPicker.Form1.resources

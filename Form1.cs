@@ -19,8 +19,7 @@ namespace ColorPicker
         public Image picture;
         private Point pictureLocation;
         private bool mouseInPic = false;
-
-
+        private Point latestMousePosition;
 
         public Form1()
         {
@@ -38,38 +37,38 @@ namespace ColorPicker
         {
             if (e.Button == MouseButtons.Left && mouseInPic == true)
             {
-                Clipboard.SetText(GetPixel(new Point(e.X, e.Y)).ToString());
-                CustomBox.createBox(this, "Color", GetPixel(new Point(e.X, e.Y)).ToString(), new Point(e.X,e.Y), GetPixel(new Point(e.X, e.Y)));             
+                //Console.WriteLine(latestMousePosition.ToString());
+               Clipboard.SetText(GetPixel(new Point(latestMousePosition.X, latestMousePosition.Y)).ToString());
+               CustomBox.createBox(this, "Color", GetPixel(new Point(latestMousePosition.X, latestMousePosition.Y)).ToString(), new Point(latestMousePosition.X, latestMousePosition.Y), GetPixel(new Point(latestMousePosition.X, latestMousePosition.Y)));             
             }
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             if (picture != null)
-            {             
-                if (e.Location.X < picture.Width && e.Location.Y < picture.Height)
-                {                   
+            {              
+              //  Console.WriteLine(e.Location.ToString());
+                if (e.Location.X < picture.Width && e.Location.Y > 80 && e.Location.Y < picture.Height + 80)
+                {
                     this.Cursor = Cursors.Cross;
                     mouseInPic = true;
+                    latestMousePosition = e.Location;
                 }
                 else
                 {
                     this.Cursor = Cursors.Default;
                     mouseInPic = false;
+                    latestMousePosition = new Point();
                 }              
-            }         
+            }
         }
 
 
         Color GetPixel(Point position)
         {
             using (var bitmap = new Bitmap(picture))
-            {
-                using (var graphics = Graphics.FromImage(bitmap))
-                {
-                    graphics.CopyFromScreen(position, new Point(0, 0), new Size(1, 1));
-                }
-                return bitmap.GetPixel(0, 0);
+            {             
+                return bitmap.GetPixel(position.X,position.Y - 80);
             }          
         }
 
@@ -95,7 +94,7 @@ namespace ColorPicker
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 if (files.Count() > 1)
                 {
-                    MessageBox.Show("Please only drag 1 file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please only drag one file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
